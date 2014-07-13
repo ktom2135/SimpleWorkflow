@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tom.model">
+	<class name="AttendType" table="type_table">
+		<id name="id" type="integer" column="type_id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" column="type_name" type="string"
+			not-null="true"></property>
+		<property name="amerce" column="amerce_amount" type="double"
+			not-null="true"></property>
+	</class>
+</hibernate-mapping>
