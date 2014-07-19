@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="GBK"?>
-<!DOCTYPE hibernate-mapping
-	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.tom.modle">
-	<class name="CheckBack" table="check_table">
-		<id name="id" type="integer" column="check_id">
-			<generator class="indentity"></generator>
+	<class name="com.tom.model.CheckBack" table="check_table">
+		<id column="check_id" name="id" type="integer">
+			<generator class="native" />
 		</id>
-		<property name="reason" column="check_reason" type="string"
-			length="50"></property>
-		<property name="result" column="check_result" type="boolean"
-			length="50" not-null="true"></property>
-		<many-to-one name="app" column="app_id" not-null="true"
-			class="Application" unique="true" lazy="false"></many-to-one>
-		<many-to-one name="manager" column="mgr_id" class="Manager"
-			not-null="true" lazy="false"></many-to-one>
+		<property column="check_reason" generated="never" lazy="false"
+			length="50" name="reason" type="string" />
+		<property column="check_result" generated="never" lazy="false"
+			name="result" type="boolean" />
+		<many-to-one class="com.tom.model.Application" column="app_id"
+			lazy="false" name="app" not-null="true" unique="true" />
+		<many-to-one class="com.tom.model.Manager" column="mgr_id"
+			lazy="false" name="manager" not-null="true" />
 	</class>
 </hibernate-mapping>

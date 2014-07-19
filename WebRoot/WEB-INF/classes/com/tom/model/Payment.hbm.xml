@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="GBK"?>
-<!DOCTYPE hibernate-mapping
-	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.tom.model">
-	<class name="Payment" table="pay_table">
-		<id type="integer" column="pay_id">
-			<generator class="indentity"></generator>
+	<class name="com.tom.model.Payment" table="pay_table">
+		<id column="pay_id" type="integer">
+			<generator class="native" />
 		</id>
-		<property name="payMonth" column="pay_month" type="string"
-			not-null="true" length="50"></property>
-
-		<property name="amount" column="pay_amount" type="double"
-			not-null="true"></property>
-		<many-to-one name="employee" column="emp_id" class="Employee"
-			not-null="true" lazy="false"></many-to-one>
+		<property column="pay_month" generated="never" lazy="false"
+			length="50" name="payMonth" not-null="true" type="string" />
+		<property column="pay_amount" generated="never" lazy="false"
+			name="amount" not-null="true" type="double" />
+		<many-to-one class="com.tom.model.Employee" column="emp_id"
+			lazy="false" name="employee" not-null="true" />
 	</class>
 </hibernate-mapping>
