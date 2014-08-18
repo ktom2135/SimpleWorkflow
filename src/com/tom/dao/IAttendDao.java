@@ -13,7 +13,7 @@ public interface IAttendDao {
 
 	void update(Attend attend);
 
-	void delete(Attend attedn);
+	void delete(Attend attend);
 
 	void delete(Integer id);
 

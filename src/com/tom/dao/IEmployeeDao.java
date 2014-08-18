@@ -13,15 +13,15 @@ public interface IEmployeeDao {
 	void Update(Employee emp);
 
 	void delete(Employee emp);
-	
+
 	void delete(Integer id);
-	
+
 	List<Employee> findAll();
-	
+
 	List<Employee> findByNameAndPass(Employee emp);
-	
+
 	Employee findByName(String name);
-	
+
 	List<Employee> findByMgr(Manager mgr);
-	
+
 }
